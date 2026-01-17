@@ -1,7 +1,8 @@
 
 # React Minor Projects 🚀
 
-A curated collection of **React mini projects** created to practice core React concepts such as **state management, hooks, context API, routing, conditional rendering, and UI components**.
+A curated collection of **React mini projects** created to practice core React concepts such as
+**state management, hooks, context API, routing, conditional rendering, and UI components**.
 Each project is built independently to focus on a specific concept.
 
 ---
@@ -9,7 +10,7 @@ Each project is built independently to focus on a specific concept.
 ## 📁 Project List
 
 ### 🔹 Beginner Projects
-- **Counter** – Simple counter using `useState`
+- **Counter** – Simple counter using 'useState'
 - **bgChanger** – Background color changer
 - **ColorGenerator** – Random color generator
 - **ParagraphGenerator** – Generate random paragraphs
