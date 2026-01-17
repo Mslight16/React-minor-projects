@@ -1,0 +1,321 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/* ===============================
+GLOBAL RESET
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+ROOT & BODY
+=============================== */
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--clr-grey-1), var(--clr-primary-5));
+  min-height: 100vh;
+  color: #111827;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+QUIZ CARD
+=============================== */
+.quiz {
+  width: 90%;
+  max-width: 760px;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.quiz-small {
+  max-width: 420px;
+}
+
+/* ===============================
+CORRECT ANSWER COUNTER
+=============================== */
+.correct-answers {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+QUESTION CONTAINER
+=============================== */
+.container h2 {
+  font-size: 1.55rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+/* ===============================
+ANSWER BUTTONS
+=============================== */
+.btn-container {
+  display: grid;
+  gap: 14px;
+}
+
+.answer-btn {
+  background: #f3f4f6;
+  border: 2px solid transparent;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.answer-btn:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.answer-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+NEXT QUESTION BUTTON
+=============================== */
+.next-question {
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.next-question:hover {
+  background: #4f46e5;
+}
+
+.next-question:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+SETUP FORM
+=============================== */
+.setup-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  color: #1f2937;
+}
+
+.form-control {
+  margin-bottom: 1.4rem;
+}
+
+.form-control label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #374151;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* ===============================
+SUBMIT BUTTON
+=============================== */
+.submit-btn {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.submit-btn:hover {
+  background: #16a34a;
+}
+
+/* ===============================
+ERROR MESSAGE
+=============================== */
+.error {
+  font-size: 0.85rem;
+  color: #dc2626;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+/* ===============================
+LOADING
+=============================== */
+.loading {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===============================
+MODAL
+=============================== */
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+.modal-container.isOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===============================
+MODAL CONTENT
+=============================== */
+.modal-content {
+  background: #ffffff;
+  padding: 2.8rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #22c55e;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  color: #374151;
+}
+
+/* ===============================
+MODAL BUTTON
+=============================== */
+.close-btn {
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.close-btn:hover {
+  background: #4f46e5;
+}
+
+/* ===============================
+RESPONSIVE
+=============================== */
+@media (max-width: 520px) {
+  .quiz {
+    padding: 1.8rem;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+}
